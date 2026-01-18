@@ -12,8 +12,8 @@
 *secret*
 firecrawl_config.sh
 
-# Claude files
-CLAUDE.md
+# Claude files (CLAUDE.md는 일룸 워크스페이스에서 공유 필요)
+# CLAUDE.md
 .claude/settings.local.json
 
 # MCP config
