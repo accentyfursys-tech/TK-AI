@@ -1,16 +1,16 @@
-# 🎯 Todo Management System - Quick Start Guide
+# Todo Management System - Quick Start Guide
 
-> Claude Code 기반 통합 Todo 관리 시스템이 완성되었습니다!
+> Claude Code 기반 Todo 관리 시스템
 
 ---
 
-## ⚡ 빠른 시작 (2분 안에)
+## 빠른 시작
 
 ### 1. Todo 추가하기
 ```bash
-/todo 서수현님 급여 차액 확인
-/todo [urgent] 노무사 퇴직금 문의
-/todo [gpters] 19기 결과 확인
+/todo 신제품 출시 콘텐츠 기획
+/todo [urgent] 경쟁사 캠페인 분석 마감
+/todo [marketing] SNS 콘텐츠 일정 확인
 ```
 
 ### 2. Todo 확인하기
@@ -28,95 +28,93 @@
 
 ---
 
-## 🎨 시스템 구조
+## 시스템 구조
 
 ```
-Claude Code Workspace
-├── /todo          → 빠른 Todo 추가 (2초)
-├── /todos         → Todo 조회 (다양한 뷰)
-└── /daily-review  → 매일 아침 Todo 체크 + 제안
-
-저장 위치:
-pkm/40-personal/43-todos/
-├── active-todos.md        # 중앙 저장소 ⭐
-├── completed-todos.md     # 완료 아카이브
-└── README.md              # 상세 가이드
+iloom-workspace/
+├── .claude/commands/
+│   ├── /todo          -> 빠른 Todo 추가 (2초)
+│   ├── /todos         -> Todo 조회 (다양한 뷰)
+│   └── /daily-review  -> 매일 아침 Todo 체크 + 제안
+│
+└── 40-personal/46-todos/
+    ├── active-todos.md        # 중앙 저장소
+    └── completed-todos.md     # 완료 아카이브
 ```
 
 ---
 
-## 💡 핵심 기능
+## 핵심 기능
 
-### ✅ 해결된 문제
+### 해결된 문제
 1. **"어디에 뒀는지 기억 못함"**
-   → 단일 저장소 (`active-todos.md`)
+   -> 단일 저장소 (`active-todos.md`)
 
 2. **"장기 프로젝트 생각없이 넘어감"**
-   → `/todos overdue`로 자동 감지
+   -> `/todos overdue`로 자동 감지
 
 3. **"주기적인 알림 없음"**
-   → `/daily-review`에서 매일 체크
+   -> `/daily-review`에서 매일 체크
 
-### 🚀 자동 저장되는 정보
+### 자동 저장되는 정보
 - **추가 시각**: 언제 추가했는지
-- **컨텍스트**: 어디서 작업하다 추가했는지
 - **우선순위**: urgent/high/normal/low
 - **프로젝트**: 어떤 프로젝트와 연결됐는지
 
 ---
 
-## 📊 실전 시나리오
+## 실전 시나리오
 
 ### 시나리오 1: 작업 중 Todo 생각남
 ```
-GPTers 프로젝트 작업 중
-→ "아 급여 처리 해야지"
-→ /todo 서수현님 급여 차액 확인
-→ ✅ 2초 만에 저장 완료
-→ 계속 작업
+SNS 콘텐츠 작업 중
+-> "아 신제품 촬영 일정 잡아야지"
+-> /todo 신제품 촬영 일정 조율
+-> 2초 만에 저장 완료
+-> 계속 작업
 ```
 
 ### 시나리오 2: 매일 아침 체크
 ```
 9:00 AM - VS Code 열고
-→ /daily-review 실행
-→ 📋 Todo 상태:
-   - 미처리: 7개
-   - 오늘 할 일: 3개
-   - 지연: 2개 ⚠️
-→ 오늘 할 것 선택
-→ 실행
+-> /daily-review 실행
+-> Todo 상태:
+   - 미처리: 5개
+   - 오늘 할 일: 2개
+   - 지연: 1개
+-> 오늘 할 것 선택
+-> 실행
 ```
 
 ### 시나리오 3: 프로젝트별 정리
 ```
 /todos project
-→ cafe-operations 관련 4개 발견
-→ 매장 순회할 때 한 번에 처리 계획
+-> product-launch 관련 3개 발견
+-> 미팅 때 한 번에 논의 계획
 ```
 
 ---
 
-## 🎯 사용 예시
+## 사용 예시
 
 ### Todo 추가 (다양한 방식)
 
 ```bash
 # 기본
-/todo 매장 CCTV 점검
+/todo 브랜드 가이드라인 확인
 
 # 우선순위 지정
-/todo [urgent] 세무사 자료 제출
-/todo [high] GPTers 커리큘럼 작성
-/todo [low] 인테리어 아이디어 수집
+/todo [urgent] 캠페인 마감 자료 제출
+/todo [high] 경쟁사 분석 리포트 작성
+/todo [low] 레퍼런스 이미지 수집
 
 # 프로젝트 지정
-/todo [cafe] 인사동 매장 의자 수리
-/todo [gpters] 스터디 템플릿 업데이트
-/todo [archimedes] 3주차 강의 자료
+/todo [marketing] 인스타그램 릴스 기획
+/todo [branding] 시즌 비주얼 컨셉 정리
+/todo [research] 소비자 인터뷰 정리
 
 # 복합
-/todo [urgent] [cafe] 동교동 에어컨 수리
+/todo [urgent] [marketing] SNS 이벤트 공지 마감
 ```
 
 ### Todo 조회 (다양한 뷰)
@@ -124,131 +122,114 @@ GPTers 프로젝트 작업 중
 ```bash
 # 전체 보기 (섹션별)
 /todos
-→ 📥 Inbox (7개)
-→ 🎯 Today (3개)
-→ ⚠️ Overdue (2개)
+-> Inbox (5개)
+-> Today (2개)
+-> Overdue (1개)
 
 # 오늘 할 일만
 /todos today
-→ 우선순위별로 정렬된 오늘 할 일
+-> 우선순위별로 정렬된 오늘 할 일
 
 # 프로젝트별 그룹화
 /todos project
-→ cafe-operations (4개)
-→ gpters (3개)
-→ archimedes (2개)
+-> marketing (3개)
+-> branding (2개)
+-> research (2개)
 
 # 오래된 것들
 /todos overdue
-→ 14일 지남: CCTV 업그레이드
-→ 10일 지남: 세무사 자료 정리
+-> 10일 지남: 경쟁사 리뷰 분석
 
 # 통계
 /todos stats
-→ 총 15개
-→ High: 3개, Normal: 10개, Low: 2개
-→ 완료율: 68%
+-> 총 12개
+-> High: 2개, Normal: 8개, Low: 2개
 ```
 
 ---
 
-## 📈 Daily Review 통합
+## Daily Review 통합
 
 `/daily-review` 실행 시 자동으로 포함되는 내용:
 
 ```markdown
-### 📊 어제 진행 상황
-- gpters: 제안서 작성 완료
-- pkm: Vault 최적화 완료
+### 어제 진행 상황
+- marketing: SNS 콘텐츠 업로드 완료
+- branding: 시즌 비주얼 시안 검토 완료
 
-### 📋 Todo 상태 체크
-- **미처리 Todo**: 7개
-- **오늘 할 일**: 3개
-- **지연 중**: 2개 (⚠️ 1주일 이상)
+### Todo 상태 체크
+- **미처리 Todo**: 5개
+- **오늘 할 일**: 2개
+- **지연 중**: 1개 (1주일 이상)
 
 **오늘 처리 제안:**
-1. 서수현님 급여 차액 확인 (high priority)
-2. GPTers 19기 결과 확인 (high priority)
-3. CCTV 업그레이드 견적 (14일 지남)
+1. 신제품 출시 콘텐츠 기획 (high priority)
+2. 경쟁사 캠페인 분석 (10일 지남)
 
-### 🎯 오늘 우선순위 제안
-1. Todo 처리 (3개 제안됨) ← NEW!
+### 오늘 우선순위 제안
+1. Todo 처리 (2개 제안됨)
 2. 프로젝트 연속성 유지
-3. 장기 프로젝트 체크
-
-### 💡 인사이트
-- cafe-operations 관련 Todo 4개 → 매장 순회 시 한 번에 처리
-- 2주 동안 업데이트 없는 프로젝트: archimedes-bath-lecture
 ```
 
 ---
 
-## 🔧 커스터마이징
+## 커스터마이징
 
 ### active-todos.md 직접 편집
 
-파일 위치: `pkm/40-personal/43-todos/active-todos.md`
+파일 위치: `./40-personal/46-todos/active-todos.md`
 
 ```markdown
-## 📥 Inbox (처리 안 한 것들)
-- [ ] 서수현님 급여 차액 확인
-  - added: 2025-10-11 15:23
-  - context: gpters-ai-branding-study/README.md
+## Inbox (처리 안 한 것들)
+- [ ] 신제품 출시 콘텐츠 기획
+  - added: 2026-02-04 15:23
   - priority: high
-  - project: cafe
+  - project: marketing
 
-## 🎯 Today (오늘 할 일)
-← 매일 아침 여기로 이동
+## Today (오늘 할 일)
+<- 매일 아침 여기로 이동
 
-## ⚠️ Overdue (오래된 것들)
-← 자동 감지 (1주일 이상)
+## Overdue (오래된 것들)
+<- 자동 감지 (1주일 이상)
 ```
 
 ### 체크박스 사용
 
 ```markdown
-- [x] 완료된 Todo  ← 완료 시 x 입력
-  → 자동으로 completed-todos.md로 아카이빙 (향후 기능)
+- [x] 완료된 Todo  <- 완료 시 x 입력
+  -> 자동으로 completed-todos.md로 아카이빙 (향후 기능)
 ```
 
 ---
 
-## 💪 활용 팁
+## 활용 팁
 
-### 1. 컨텍스트 추적
-```
-"이 Todo를 왜 추가했지?"
-→ context 필드 확인
-→ gpters-ai-branding-study/README.md
-→ 아 맞다, 그때 작업하다가 생각났지!
-```
-
-### 2. 프로젝트 묶음 처리
+### 1. 프로젝트 묶음 처리
 ```
 /todos project
-→ cafe-operations 관련 4개 발견
-→ 매장 순회할 때 한 번에 처리하면 효율적
+-> marketing 관련 3개 발견
+-> 팀 미팅에서 한 번에 공유하면 효율적
 ```
 
-### 3. 우선순위 관리
+### 2. 우선순위 관리
 ```
 /todos today
-→ High priority 2개 먼저
-→ Normal priority 그 다음
-→ Low priority는 시간 나면
+-> High priority 먼저
+-> Normal priority 그 다음
+-> Low priority는 시간 나면
 ```
 
-### 4. Overdue 주기적 체크
+### 3. Overdue 주기적 체크
 ```
 주 1회 금요일:
 /todos overdue
-→ 방치된 Todo 확인
-→ 삭제 또는 재우선순위화
+-> 방치된 Todo 확인
+-> 삭제 또는 재우선순위화
 ```
 
 ---
 
-## 🎓 학습 곡선
+## 학습 곡선
 
 ### Day 1: 기본 사용
 ```bash
@@ -259,61 +240,18 @@ GPTers 프로젝트 작업 중
 ### Week 1: 우선순위 추가
 ```bash
 /todo [urgent] [내용]
-/todo [gpters] [내용]
+/todo [marketing] [내용]
 ```
 
 ### Week 2: Daily Review 습관화
 ```bash
 매일 아침: /daily-review
-→ Todo 체크 + 오늘 할 일 선택
-```
-
-### Month 1: 프로젝트별 관리
-```bash
-/todos project
-→ 프로젝트별로 정리하며 작업
+-> Todo 체크 + 오늘 할 일 선택
 ```
 
 ---
 
-## 📚 상세 문서
-
-더 자세한 내용은:
-- [pkm/40-personal/43-todos/README.md](pkm/40-personal/43-todos/README.md)
-
-커맨드 도움말:
-- `~/.claude/commands/todo.md`
-- `~/.claude/commands/todos.md`
-- `~/.claude/commands/daily-review.md`
-
----
-
-## 🚀 다음 단계 (선택사항)
-
-### 1. n8n 알림 시스템 (고급)
-```
-n8n Workflow:
-- 매일 오전 9시 Telegram 알림
-- 오래된 Todo 주간 리포트
-- 프로젝트 방치 경고
-```
-
-### 2. 반복 작업 시스템
-```markdown
-- [ ] 급여 처리
-  - recurring: monthly
-  - next: 2025-11-10
-```
-
-### 3. Projects 폴더 통합
-```
-각 프로젝트 README에 Todo 섹션
-→ /todos project 실행 시 자동 집계
-```
-
----
-
-## ✅ 성공 체크리스트
+## 성공 체크리스트
 
 **시스템이 잘 작동하는 신호:**
 - [ ] Todo를 추가할 때 2초 이내에 완료
@@ -330,24 +268,13 @@ n8n Workflow:
 
 ---
 
-## 🎉 완성!
+## 시작하기
 
-**이제 할 수 있는 것:**
-1. ✅ 작업 중 Todo 빠르게 추가 (2초)
-2. ✅ 다양한 방식으로 조회
-3. ✅ 매일 아침 자동 체크 + 제안
-4. ✅ 장기 프로젝트 놓치지 않기
-5. ✅ 컨텍스트 추적
-
-**시작해보세요!**
 ```bash
-/todo 이 Todo 시스템 테스트해보기
+/todo Todo 시스템 테스트해보기
 /todos
 ```
 
 ---
 
-*"어디에 뒀는지 기억 못하는" 문제를 해결하는 단일 Todo 시스템*
-
-*Created: 2025-10-11*
-*Version: 1.0*
+*iloom-workspace Todo System v1.0*
