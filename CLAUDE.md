@@ -24,6 +24,7 @@
 
 ## 폴더 구조
 
+
 ```
 iloom-workspace/
 ├── 00-inbox/          # 임시 저장, 미분류
