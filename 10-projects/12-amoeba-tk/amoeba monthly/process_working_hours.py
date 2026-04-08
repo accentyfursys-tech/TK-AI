@@ -8,8 +8,8 @@ import re
 import openpyxl
 from copy import copy
 
-INPUT_FILE = "03. 근무시간상세(2월찐).xlsx"
-OUTPUT_FILE = "03. 근무시간상세(2월찐)_처리완료.xlsx"
+INPUT_FILE = "03. 근무시간상세(3월가).xlsx"
+OUTPUT_FILE = "03. 근무시간상세(3월가)_처리완료.xlsx"
 
 # 공통직접구분: 5번째 컬럼(col index 5, 1-based)
 # 안분된채산조직: 7번째 컬럼(col index 7, 1-based)
